@@ -26,7 +26,7 @@ const NEAREST_CITY = 'Suntree';
  * Key required to fetch weather data from {@link www.apixu.com Apixu}
  * @member
  */
-const APIXU_KEY = '03c57756a24343359c6231446181811';
+const APIXU_KEY = '';
 /**
  * Defines a list of cities to populate to the UI select box.
  * The cities can be selected and have their real-time
@@ -219,7 +219,7 @@ function fetchCityAPI(typeOfReport, selectCity) {
   let root = 'http://api.apixu.com/v1/';
   let report = typeOfReport + '.json';
   //let key = '?key=' + APIXU_KEY;
-  let key = '?key=' + '03c57756a24343359c6231446181811';
+  let key = '?key=' + APIXU_KEY;
   let city = '&q=' + selectCity;
   let url = root + report + key + city;
 
