@@ -14,6 +14,6 @@ This script is an Express server (specific to node) that listens off port 8088 w
 ## fetch
 Same exact example as *ajax* except it utilizes fetch, a more popular method of retrieving JSON data as AJAX is slowly being phased out. Compare the 2 side-by-side to see the difference.
 ## FetchWeather
-Uses fetch to retrieve weather information from ![Apixu](www.apixu.com) weather service about 5 major cities. Information on each can be retrieved by selecting its name from the drop down. Note that for this example, you must enter your own key in order for the request to work. You can do so by setting the value of the `APIXU_KEY` constant located at the top. To get a key, register on the website.
+Uses fetch to retrieve weather information from ![Apixu](https://www.apixu.com) weather service about 5 major cities. Information on each can be retrieved by selecting its name from the drop down. Note that for this example, you must enter your own key in order for the request to work. You can do so by setting the value of the `APIXU_KEY` constant located at the top. To get a key, register on the website.
 ## PromiseAsyncAwait
 This displays the functionality of Promises and their use on async/await function methods. It shows 2 methods of invoking and using a Promise to block IO on the event queue.
