@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>fetch  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>fetch</h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#fetchjs'
+                  class="">
+                  fetch.js
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#host'
+                  class="">
+                  HOST
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#suspects'
+                  class="">
+                  suspects
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#rooms'
+                  class="">
+                  rooms
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#weapons'
+                  class="">
+                  weapons
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#displayactivity'
+                  class="">
+                  displayActivity
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fetchclue'
+                  class="">
+                  fetchClue
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#handleerror'
+                  class="">
+                  handleError
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fetchjs'>
+      fetch.js
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Uses Fetch to retrieve JSON packages from a defined API that
+returns rooms, suspects and weapons in a game of clue.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>fetch.js</div>
+   
+  
+  
+
+  
+  <div>Version: 2018-12-01</div>
+  
+  <div>Author: Kevin Shelley (krshelle@asu.edu)</div>
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='host'>
+      HOST
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Defines the server's root address and port number.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>HOST</div>
+   
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-string">'http://localhost:8088/'</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='suspects'>
+      suspects
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Variable to hold the list of suspects retrieved from the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>suspects</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='rooms'>
+      rooms
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Variable to hold the list of rooms retrieved from the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>rooms</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='weapons'>
+      weapons
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Variable to hold the list of weapons retrieved from the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>weapons</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='displayactivity'>
+      displayActivity
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Retrieves information from the server via its root endpoint and
+displays it on the fetch.html web page. See the server 'clueService.js'
+for more information about the root enpoint and the various responses
+enabled by the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>displayActivity()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fetchclue'>
+      fetchClue
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sends a fetch request to the server to retrieve the necessary
+data. Fetch requests are made to the <a href="#host">host</a> at a
+specified endpoint. See the 'clueService.js' server for information
+about the different enpoints.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>fetchClue(host: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>host</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The host and port number to send the request to.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>endpoint</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The endpoint of the get request on the server.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
+        A Promise with the retrieved JSON.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='handleerror'>
+      handleError
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Displays an error message based on the request returned by the
+server. If no address is returned, then a 0 error is generated with
+a default error description.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>handleError(error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>error</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</code>
+	    The request object with the error information.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>ajax  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>ajax</h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#ajaxjs'
+                  class="">
+                  ajax.js
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#host'
+                  class="">
+                  HOST
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#suspects'
+                  class="">
+                  suspects
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#rooms'
+                  class="">
+                  rooms
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#weapons'
+                  class="">
+                  weapons
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#displayactivity'
+                  class="">
+                  displayActivity
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#ajaxget'
+                  class="">
+                  ajaxGet
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getrequestobject'
+                  class="">
+                  getRequestObject
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#handleresponse'
+                  class="">
+                  handleResponse
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#handleerror'
+                  class="">
+                  handleError
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='ajaxjs'>
+      ajax.js
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Uses AJAX to retrieve JSON packages from a defined API that
+returns rooms, suspects and weapons in a game of clue.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>ajax.js</div>
+   
+  
+  
+
+  
+  <div>Version: 2018-12-01</div>
+  
+  <div>Author: Kevin Shelley (krshelle@asu.edu)</div>
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='host'>
+      HOST
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Defines the server's root address and port number.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>HOST</div>
+   
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-string">'http://localhost:8088/'</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='suspects'>
+      suspects
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Variable to hold the list of suspects retrieved from the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>suspects</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='rooms'>
+      rooms
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Variable to hold the list of rooms retrieved from the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>rooms</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='weapons'>
+      weapons
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Variable to hold the list of weapons retrieved from the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>weapons</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='displayactivity'>
+      displayActivity
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Retrieves information from the server via its root endpoint and
+displays it on the ajax.html web page. See the server 'clueService.js'
+for more information about the root enpoint and the various responses
+enabled by the server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>displayActivity()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='ajaxget'>
+      ajaxGet
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sends an AJAX GET request to the server specified by the
+<a href="#host">host url</a> and the parameter endpoint. If no information
+is retrieved or the server returns an error, the error will be handled
+by the appropriate <a href="#handleError">handleError</a> method.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>ajaxGet(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>endpoint</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The endpoint of the get request to the server.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getrequestobject'>
+      getRequestObject
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns the AJAX object to enable async communication
+with the back-end server.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getRequestObject(): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        The AJAX request object if the window enables it,
+null if the window does not support AJAX
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='handleresponse'>
+      handleResponse
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sends request status to the debugger to analyze
+the state of the request.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>handleResponse(request: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>request</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</code>
+	    The request object to the server.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='handleerror'>
+      handleError
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Displays an error message based on the request returned by the
+server. If no address is returned, then a 0 error is generated with
+a default error description.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>handleError(request: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>request</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</code>
+	    The request object with the error information.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>

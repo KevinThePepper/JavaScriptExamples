@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Shelley">
+    <meta name="description" content="SER421 Fall B Lab 5 Activity 2 Weather information">
+    <title>Activity 2 - Weather Client</title>
+    <script src='FetchWeather.js' type='text/javascript'></script>
+  </head>
+  <body onload='setLayout()'>
+    <div id='city-averages'>
+      The average temperature is <span id='city-averages-temp'>AAA</span>
+      &#176;C and the hottest city is <span id='city-averages-hottest'>HHH</span>
+    </div><br>
+    <table id='city-table' style='border: 1px solid black; text-align: center;'>
+      <tr>
+        <th>City</th>
+        <th>Timestamp<br>(yyyy-mm-dd HH:MM)</th>
+        <th>Temperature<br>(&#176;C)</th>
+        <th>Wind Speed<br>(KPH)</th>
+        <th>Visibility<br>(KM)</th>
+        <th></th>
+      </tr>
+      <tr id='closest-city-record'>
+      </tr>
+      <tr id='select-city-record'>
+      </tr>
+    </table>
+    <br>
+    <select id='city-select' onchange='updateTableCity()'>
+    </select>
+    <button id='refresh' onclick='setLayout()'>Refresh</button>
+    <br><br>
+    <div id='forecast-info'>
+      <h3>Forecast for <span id='city-forecast-name'>HHH</span> on
+        <span id='city-forecast-date'>DDD</span>:</h3>
+      <div id='city-forecast-day'></div>
+      <div id='city-forecast-astro'></div>
+    </div>
+  </body>
+</html>

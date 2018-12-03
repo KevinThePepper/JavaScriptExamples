@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>PromiseAsyncAwait  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>PromiseAsyncAwait</h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#promiseasyncawaitjs'
+                  class="">
+                  PromiseAsyncAwait.js
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fs'
+                  class="">
+                  fs
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#makedir'
+                  class="">
+                  makeDir
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#createpromise'
+                  class="">
+                  createPromise
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#awaitasynch'
+                  class="">
+                  awaitAsynch
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#handleerror'
+                  class="">
+                  handleError
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='promiseasyncawaitjs'>
+      PromiseAsyncAwait.js
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Displays the functionality of Promises and
+await/asynch method to create a synchronous environment
+on the asynchronous event loop.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>PromiseAsyncAwait.js</div>
+   
+  
+  
+
+  
+  <div>Version: 12/1/2018</div>
+  
+  <div>Author: Kevin Shelley (krshelle@asu.edu)</div>
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fs'>
+      fs
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Required for file IO. Used to create file directories.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>fs</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='makedir'>
+      makeDir
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Creates a directory with all users read/write/execute permissions.
+Permissions are granted to allow the user to delete the folder after
+executing this script.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>makeDir(dir: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>dir</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The relative/absolute directory.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        A Promise object to create the directory and modify the permissions.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='createpromise'>
+      createPromise
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Displays using the returned Promise from the <a href="#makeDir">makeDir</a>
+method using the Promise object syntax. Creates a 'promises/' folder
+with 3 sub-directories.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>createPromise()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='awaitasynch'>
+      awaitAsynch
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Displays using the returned Promise from the <a href="#makeDir">makeDir</a>
+method using await/async. Creates an 'async/' folder with 3 sub-directories.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>awaitAsynch()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='handleerror'>
+      handleError
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Error handler for all exceptions caught.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>handleError(e: exception)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>e</span> <code class='quiet'>(exception)</code>
+	    The exception being thrown.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>

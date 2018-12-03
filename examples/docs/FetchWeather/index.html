@@ -1,0 +1,1410 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Activity 2 - SER421 Lab 5  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>Activity 2 - SER421 Lab 5</h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#activity2js'
+                  class="">
+                  activity2.js
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#debugon'
+                  class="">
+                  DEBUGON
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#nearest_city'
+                  class="">
+                  NEAREST_CITY
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#apixu_key'
+                  class="">
+                  APIXU_KEY
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#init_cities'
+                  class="">
+                  INIT_CITIES
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#weatherconditions'
+                  class="">
+                  weatherConditions
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#average'
+                  class="">
+                  average
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#hottest'
+                  class="">
+                  hottest
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#setlayout'
+                  class="">
+                  setLayout
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#populatecity'
+                  class="">
+                  populateCity
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#updatetablecity'
+                  class="">
+                  updateTableCity
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fetchcityapi'
+                  class="">
+                  fetchCityAPI
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fetchweatherconditions'
+                  class="">
+                  fetchWeatherConditions
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#handleerror'
+                  class="">
+                  handleError
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#gethttpstatuscode'
+                  class="">
+                  getHTTPStatusCode
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getforecast'
+                  class="">
+                  getForecast
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#setforecastfield'
+                  class="">
+                  setForecastField
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getweathercodedescription'
+                  class="">
+                  getWeatherCodeDescription
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getforecastbuttonstring'
+                  class="">
+                  getForecastButtonstring
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getselectedcity'
+                  class="">
+                  getSelectedCity
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='activity2js'>
+      activity2.js
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Lab 5 activity 2 javascript template that
+defines the interaction between this client and the
+<a href="www.apixu.com">www.apixu.com</a> weather API. It uses a series
+of real-time fetching methods and graphical information
+to display current weather information in a give set
+of regions using a dynamic table platform.<p></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>activity2.js</div>
+   
+  
+  
+
+  
+  <div>Version: 2018-11-21</div>
+  
+  <div>Author: Kevin Shelley (krshelle@asu.edu)</div>
+  <div>Copyright: 2018 Kevin Shelley (krshelle@asu.edu)
+</div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='debugon'>
+      DEBUGON
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Turns the debugger on and off</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>DEBUGON</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='nearest_city'>
+      NEAREST_CITY
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Defines the name of the nearest city to current location</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>NEAREST_CITY</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='apixu_key'>
+      APIXU_KEY
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Key required to fetch weather data from <a href="www.apixu.com">Apixu</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>APIXU_KEY</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='init_cities'>
+      INIT_CITIES
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Defines a list of cities to populate to the UI select box.
+The cities can be selected and have their real-time
+weather information fetched and displayed.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>INIT_CITIES</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='weatherconditions'>
+      weatherConditions
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Stores weather conditions and their corresponding descriptions,
+codes, and other information (for complete listing of codes see
+<a href="http://www.apixu.com/doc/Apixu_weather_conditions.json">Apixu weather conditions</a>)</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>weatherConditions</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='average'>
+      average
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Stores the average temperature of the <a href="#init_cities">list of cities</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>average</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='hottest'>
+      hottest
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Stores the city name and temperature of the hottest city amongst
+the <a href="#init_cities">list of cities</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>hottest</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='setlayout'>
+      setLayout
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sets the initial layout of the weather page by:</p>
+<ul>
+<li>Setting the average and hottest temperatures on page header</li>
+<li>Drawing and populating table information</li>
+<li>Setting 'Forecast' button event listeners</li>
+</ul>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>setLayout()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='populatecity'>
+      populateCity
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Populates the table with a city value using a series of
+parameters to identify the correct table position</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>populateCity(trId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, city: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, typeOfReport: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>trId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The id of the 'tr' object in the city-table table
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>city</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The city to populate the record information with
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>typeOfReport</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    Current or forecast report to pull from
+ther apixu weather API
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='updatetablecity'>
+      updateTableCity
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Defines the event listener for the select box,
+which allows the user to select a value and the table
+to reflect with the newly-chosen city information</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>updateTableCity()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fetchcityapi'>
+      fetchCityAPI
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Fetches JSON data from the server based on the type of
+report requested and the city.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>fetchCityAPI(typeOfReport: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, selectCity: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>typeOfReport</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    'current' or 'forecast' report
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>selectCity</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The city being fetched
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        The apixu JSON API as a Promise
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fetchweatherconditions'>
+      fetchWeatherConditions
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Fetches the apixu weather conditions with a list of
+codes and their corresponding night/day descriptions. Drawn from
+<a href="http://www.apixu.com/doc/Apixu_weather_conditions.json">http://www.apixu.com/doc/Apixu_weather_conditions.json</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>fetchWeatherConditions()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='handleerror'>
+      handleError
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Handles and displays errors if passed by the apixu JSON API</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>handleError(error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>error</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The JSON error object as a Promise
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='gethttpstatuscode'>
+      getHTTPStatusCode
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns the HTTP status code based on the error code
+defined by the apixu error API. See:
+<a href="https://www.apixu.com/doc/errors.aspx">https://www.apixu.com/doc/errors.aspx</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getHTTPStatusCode(code: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>code</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The apixu error code
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        The corresponding HTTP status code
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getforecast'>
+      getForecast
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>onclick event listener for the 'Forecast' buttons
+on the weather table.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getForecast(trId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>trId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The id of the 'tr' to draw the city info from
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='setforecastfield'>
+      setForecastField
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Sets the forecast div ('forecast-info') using response data
+generated from apixu</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>setForecastField(response: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>response</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON</a>)</code>
+	    Forecast data fetched from apixu
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getweathercodedescription'>
+      getWeatherCodeDescription
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns the corresponding weather code to the passed parameter.
+The weather codes are drawn from:
+<a href="http://www.apixu.com/doc/Apixu_weather_conditions.json">http://www.apixu.com/doc/Apixu_weather_conditions.json</a></p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getWeatherCodeDescription(code: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>code</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    Weather status code
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        JSON representation of the weather code. Null if there
+is no corresponding code in the apixu API
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getforecastbuttonstring'>
+      getForecastButtonstring
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns a button object to be inserted into the DOM</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getForecastButtonstring(trId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>trId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    id of 'tr' object to assign button method to
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        A button object to be inserted into the DOM
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getselectedcity'>
+      getSelectedCity
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Returns the selected city of the city-select drop down</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getSelectedCity(): any</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        the selected city of the city-select drop down
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
